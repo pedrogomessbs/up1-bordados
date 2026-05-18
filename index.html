@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Espera! Uma oferta única antes de você sair</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400;1,9..144,500;1,9..144,600&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --cream:#f7efe1;
+  --cream-deep:#f0e4d0;
+  --ink:#2d2419;
+  --ink-soft:#5a4a3a;
+  --green:#1d4e3f;
+  --green-deep:#143628;
+  --green-light:#2d6a55;
+  --blush:#e6c4b4;
+  --blush-light:#f2d9cc;
+  --copper:#b8895a;
+  --copper-dark:#8e6740;
+  --line:#d4c4ad;
+  --alert:#c14d3a;
+  --alert-deep:#9a3a2a;
+  --gold:#d4a857;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  font-family:'Manrope',sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  position:relative;
+}
+
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:1;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' /%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+  mix-blend-mode:multiply;
+}
+
+.container{
+  max-width:920px;
+  margin:0 auto;
+  padding:0 28px;
+  position:relative;
+  z-index:2;
+}
+
+/* ===== ALERT BAR ===== */
+.alert-bar{
+  background:var(--alert-deep);
+  color:#fff8ef;
+  text-align:center;
+  padding:14px 20px;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  position:relative;
+  z-index:5;
+  border-bottom:3px solid var(--gold);
+}
+
+.alert-bar strong{color:var(--gold);font-weight:700}
+
+.pulse{
+  display:inline-block;
+  width:9px;
+  height:9px;
+  background:var(--gold);
+  border-radius:50%;
+  margin-right:10px;
+  animation:pulse 1.5s ease-in-out infinite;
+  vertical-align:middle;
+}
+
+@keyframes pulse{
+  0%,100%{opacity:1;transform:scale(1);box-shadow:0 0 0 0 rgba(212,168,87,0.7)}
+  50%{opacity:0.5;transform:scale(0.7);box-shadow:0 0 0 8px rgba(212,168,87,0)}
+}
+
+/* ===== HERO ===== */
+.hero{
+  padding:64px 0 32px;
+  text-align:center;
+  position:relative;
+}
+
+.stop-tag{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:500;
+  font-size:17px;
+  color:var(--alert);
+  margin-bottom:28px;
+  padding:10px 26px;
+  border:1.5px solid var(--alert);
+  border-radius:100px;
+  background:rgba(255,255,255,0.6);
+  text-transform:none;
+}
+
+.stop-tag svg{width:18px;height:18px}
+
+.hero h1{
+  font-family:'Fraunces',serif;
+  font-weight:600;
+  font-size:clamp(36px,6vw,64px);
+  line-height:1;
+  letter-spacing:-0.025em;
+  color:var(--green-deep);
+  margin-bottom:20px;
+}
+
+.hero h1 .accent{
+  font-style:italic;
+  font-weight:500;
+  color:var(--alert);
+  display:block;
+  margin-top:6px;
+}
+
+.hero-sub{
+  font-size:18px;
+  color:var(--ink-soft);
+  max-width:620px;
+  margin:0 auto;
+  line-height:1.55;
+}
+
+.hero-sub strong{color:var(--green-deep);font-weight:700}
+
+/* ===== OFFER CARD ===== */
+.offer{
+  background:linear-gradient(135deg,#fbf5ea 0%,#f0e4d0 100%);
+  border:2px solid var(--copper);
+  border-radius:28px;
+  margin:40px 0 24px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 24px 60px -16px rgba(45,36,25,0.18);
+}
+
+.offer-ribbon{
+  position:absolute;
+  top:28px;
+  right:-46px;
+  background:var(--alert);
+  color:#fff;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  padding:8px 52px;
+  transform:rotate(35deg);
+  box-shadow:0 4px 14px rgba(154,58,42,0.35);
+  z-index:3;
+}
+
+.offer-header{
+  background:var(--green-deep);
+  color:var(--cream);
+  padding:36px 44px 32px;
+  position:relative;
+  overflow:hidden;
+}
+
+.offer-header::after{
+  content:'';
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  height:4px;
+  background:linear-gradient(90deg,var(--copper),var(--gold),var(--copper));
+}
+
+.offer-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-size:15px;
+  color:var(--blush);
+  margin-bottom:10px;
+}
+
+.offer-kicker svg{width:16px;height:16px}
+
+.offer-title{
+  font-family:'Fraunces',serif;
+  font-weight:600;
+  font-size:clamp(26px,3.8vw,38px);
+  line-height:1.1;
+  letter-spacing:-0.015em;
+  color:var(--cream);
+}
+
+.offer-title em{
+  font-style:italic;
+  color:var(--gold);
+}
+
+.offer-body{padding:40px 44px}
+
+.offer-pitch{
+  font-size:17px;
+  color:var(--ink-soft);
+  line-height:1.7;
+  margin-bottom:32px;
+}
+
+.offer-pitch strong{color:var(--green-deep);font-weight:600}
+
+/* ===== BENEFITS ===== */
+.benefits{
+  display:grid;
+  gap:12px;
+  margin-bottom:36px;
+}
+
+.benefit{
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+  padding:18px 22px;
+  background:rgba(255,255,255,0.55);
+  border:1px solid rgba(184,137,90,0.25);
+  border-radius:14px;
+  transition:all 0.3s;
+}
+
+.benefit:hover{
+  background:rgba(255,255,255,0.85);
+  border-color:var(--copper);
+  transform:translateX(4px);
+}
+
+.check{
+  flex-shrink:0;
+  width:28px;
+  height:28px;
+  background:var(--green-deep);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:2px;
+}
+
+.check svg{width:14px;height:14px;color:var(--gold);stroke-width:3}
+
+.benefit-text{
+  font-size:15.5px;
+  color:var(--ink);
+  line-height:1.55;
+}
+
+.benefit-text strong{color:var(--green-deep);font-weight:700}
+
+/* ===== PRICE BLOCK ===== */
+.price-block{
+  text-align:center;
+  padding:32px 24px;
+  background:#fff8ef;
+  border:2px dashed var(--copper);
+  border-radius:20px;
+  margin-bottom:32px;
+  position:relative;
+}
+
+.price-label{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-size:15px;
+  color:var(--ink-soft);
+  margin-bottom:12px;
+}
+
+.price-old{
+  font-size:18px;
+  color:var(--ink-soft);
+  text-decoration:line-through;
+  text-decoration-color:var(--alert);
+  text-decoration-thickness:2px;
+  margin-bottom:6px;
+}
+
+.price-now{
+  display:flex;
+  align-items:baseline;
+  justify-content:center;
+  gap:6px;
+  margin-bottom:8px;
+}
+
+.price-now .currency{
+  font-family:'Fraunces',serif;
+  font-size:28px;
+  font-weight:600;
+  color:var(--green-deep);
+}
+
+.price-now .amount{
+  font-family:'Fraunces',serif;
+  font-size:clamp(60px,9vw,84px);
+  font-weight:700;
+  color:var(--green-deep);
+  line-height:1;
+  letter-spacing:-0.03em;
+}
+
+.price-now .cents{
+  font-family:'Fraunces',serif;
+  font-size:28px;
+  font-weight:600;
+  color:var(--green-deep);
+}
+
+.price-installments{
+  font-size:14px;
+  color:var(--ink-soft);
+  margin-top:4px;
+}
+
+.price-installments strong{color:var(--green-deep);font-weight:700}
+
+.discount-badge{
+  display:inline-block;
+  background:var(--alert);
+  color:#fff;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  padding:6px 14px;
+  border-radius:6px;
+  margin-top:14px;
+}
+
+/* ===== MAIN CTA - animação combo igual upsells originais ===== */
+.cta-wrap-anim{
+  position:relative;
+  animation:ctaWiggle 3.5s ease-in-out infinite;
+  transform-origin:center;
+}
+
+@keyframes ctaWiggle{
+  0%,88%,100%{transform:scale(1) rotate(0deg)}
+  90%{transform:scale(1.04) rotate(-1.2deg)}
+  92%{transform:scale(1.04) rotate(1.2deg)}
+  94%{transform:scale(1.04) rotate(-0.8deg)}
+  96%{transform:scale(1.04) rotate(0.8deg)}
+  98%{transform:scale(1.04) rotate(0deg)}
+}
+
+.cta-main{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  width:100%;
+  background:linear-gradient(135deg,#2d6a55 0%,#143628 100%);
+  color:var(--cream);
+  text-decoration:none;
+  padding:26px 32px;
+  border-radius:18px;
+  font-weight:700;
+  font-size:clamp(15px,2vw,18px);
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  text-align:center;
+  position:relative;
+  transition:all 0.3s cubic-bezier(0.4,0,0.2,1);
+  border:2px solid var(--gold);
+  overflow:hidden;
+  cursor:pointer;
+  animation:ctaPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes ctaPulse{
+  0%,100%{
+    box-shadow:
+      0 1px 0 rgba(255,255,255,0.15) inset,
+      0 16px 40px -10px rgba(20,54,40,0.5),
+      0 4px 12px -4px rgba(20,54,40,0.35),
+      0 0 0 0 rgba(212,168,87,0.6),
+      0 0 0 0 rgba(212,168,87,0.4);
+  }
+  50%{
+    box-shadow:
+      0 1px 0 rgba(255,255,255,0.15) inset,
+      0 16px 40px -10px rgba(20,54,40,0.5),
+      0 4px 12px -4px rgba(20,54,40,0.35),
+      0 0 0 10px rgba(212,168,87,0.15),
+      0 0 0 20px rgba(212,168,87,0);
+  }
+}
+
+/* Brilho passando */
+.cta-main::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:60%;
+  height:100%;
+  background:linear-gradient(90deg,
+    transparent 0%,
+    rgba(255,255,255,0.05) 20%,
+    rgba(212,168,87,0.35) 50%,
+    rgba(255,255,255,0.05) 80%,
+    transparent 100%);
+  transform:skewX(-20deg);
+  animation:shine 2.8s ease-in-out infinite;
+}
+
+@keyframes shine{
+  0%{left:-100%}
+  60%,100%{left:160%}
+}
+
+.cta-main:hover{transform:translateY(-2px)}
+
+.cta-main svg{
+  width:22px;
+  height:22px;
+  flex-shrink:0;
+  animation:arrowBounce 1.2s ease-in-out infinite;
+}
+
+@keyframes arrowBounce{
+  0%,100%{transform:translateX(0)}
+  50%{transform:translateX(6px)}
+}
+
+.cta-main span,
+.cta-main svg{position:relative;z-index:2}
+
+.cta-meta{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:18px 28px;
+  margin-top:22px;
+  font-size:13px;
+  color:var(--ink-soft);
+}
+
+.cta-meta-item{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+}
+
+.cta-meta-item svg{width:14px;height:14px;color:var(--copper-dark)}
+
+/* ===== STITCH DIVIDER ===== */
+.stitch{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin:24px auto 16px;
+  max-width:200px;
+  opacity:0.5;
+}
+
+.stitch .dash{
+  flex:1;
+  border-top:2px dashed var(--copper);
+  height:0;
+}
+
+.stitch .diamond{
+  width:8px;
+  height:8px;
+  background:var(--copper);
+  transform:rotate(45deg);
+  flex-shrink:0;
+}
+
+/* ===== GUARANTEE ===== */
+.guarantee{
+  display:flex;
+  align-items:center;
+  gap:24px;
+  padding:24px 28px;
+  background:#fbf5ea;
+  border:1px solid var(--line);
+  border-radius:18px;
+  margin-bottom:32px;
+}
+
+.guarantee-seal{
+  flex-shrink:0;
+  width:72px;
+  height:72px;
+  background:var(--green-deep);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--gold);
+  position:relative;
+}
+
+.guarantee-seal::before{
+  content:'';
+  position:absolute;
+  inset:-4px;
+  border:1px dashed var(--copper);
+  border-radius:50%;
+}
+
+.guarantee-seal svg{width:34px;height:34px}
+
+.guarantee-text h4{
+  font-family:'Fraunces',serif;
+  font-weight:600;
+  font-size:19px;
+  color:var(--green-deep);
+  margin-bottom:4px;
+  letter-spacing:-0.01em;
+}
+
+.guarantee-text p{
+  font-size:14px;
+  color:var(--ink-soft);
+  line-height:1.5;
+}
+
+/* ===== DECLINE LINK ===== */
+.decline-wrap{
+  text-align:center;
+  padding:8px 0 56px;
+}
+
+.decline{
+  display:inline-block;
+  font-size:13px;
+  color:var(--ink-soft);
+  text-decoration:underline;
+  text-decoration-color:rgba(90,74,58,0.3);
+  text-underline-offset:4px;
+  transition:all 0.3s;
+  padding:8px 12px;
+  font-style:italic;
+}
+
+.decline:hover{
+  color:var(--alert);
+  text-decoration-color:var(--alert);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.hero > *{animation:fadeUp 0.8s cubic-bezier(0.4,0,0.2,1) backwards}
+.hero .stop-tag{animation-delay:0.1s}
+.hero h1{animation-delay:0.25s}
+.hero-sub{animation-delay:0.4s}
+.offer{animation:fadeUp 0.9s 0.55s cubic-bezier(0.4,0,0.2,1) backwards}
+.guarantee{animation:fadeUp 0.9s 0.75s cubic-bezier(0.4,0,0.2,1) backwards}
+.decline-wrap{animation:fadeUp 0.9s 0.9s cubic-bezier(0.4,0,0.2,1) backwards}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:640px){
+  .alert-bar{font-size:11px;padding:12px 16px;letter-spacing:0.04em}
+  .container{padding:0 18px}
+  .hero{padding:40px 0 24px}
+  .stop-tag{font-size:14px;padding:8px 18px}
+  .offer{border-radius:22px;margin:32px 0 20px}
+  .offer-header{padding:28px 24px 24px}
+  .offer-body{padding:28px 22px}
+  .offer-ribbon{font-size:10px;padding:6px 44px;top:20px;right:-50px}
+  .benefit{padding:14px 16px;gap:12px}
+  .benefit-text{font-size:14.5px}
+  .price-block{padding:24px 16px}
+  .cta-main{padding:22px 18px;font-size:14px;gap:10px;border-radius:14px}
+  .cta-main svg{width:18px;height:18px}
+  .cta-meta{gap:12px 20px;font-size:12px}
+  .guarantee{flex-direction:column;text-align:center;padding:24px 22px;gap:16px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ============ ALERT BAR ============ -->
+<div class="alert-bar">
+  <span class="pulse"></span>
+  Atenção: essa oferta aparece <strong>UMA ÚNICA VEZ</strong> e não voltará
+</div>
+
+<div class="container">
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <div class="stop-tag">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="12" y1="8" x2="12" y2="12"/>
+        <line x1="12" y1="16" x2="12.01" y2="16"/>
+      </svg>
+      Espera, querida bordadeira
+    </div>
+
+    <h1>
+      Antes de você sair…
+      <span class="accent">uma última oferta</span>
+    </h1>
+
+    <p class="hero-sub">
+      Sua compra já foi aprovada — mas <strong>tem mais uma coisa que você precisa ver</strong>. 
+      Uma oportunidade exclusiva pra quem acabou de adquirir a Central Premium.
+    </p>
+  </header>
+
+  <!-- ============ OFFER CARD ============ -->
+  <section class="offer">
+    <div class="offer-ribbon">Oferta única</div>
+
+    <div class="offer-header">
+      <div class="offer-kicker">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2 L13.5 8.5 L20 10 L13.5 11.5 L12 18 L10.5 11.5 L4 10 L10.5 8.5 Z"/>
+        </svg>
+        Adicional exclusivo — só nessa página
+      </div>
+      <h2 class="offer-title">Coleção <em>VIP Bordadeira</em><br>+ Aulas Avançadas</h2>
+    </div>
+
+    <div class="offer-body">
+
+      <p class="offer-pitch">
+        Adicione agora à sua coleção <strong>200 riscos exclusivos</strong> que não estão na Central Premium, 
+        mais um módulo completo de <strong>aulas avançadas</strong> — técnicas que vão elevar suas peças 
+        a um outro nível. Sem precisar passar de novo pelo checkout.
+      </p>
+
+      <!-- BENEFITS -->
+      <div class="benefits">
+
+        <div class="benefit">
+          <div class="check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="benefit-text">
+            <strong>200 riscos exclusivos VIP</strong> — temas e estilos que não estão na coleção principal
+          </div>
+        </div>
+
+        <div class="benefit">
+          <div class="check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="benefit-text">
+            <strong>Módulo de aulas avançadas</strong> — técnicas de pontos, sombreamento e acabamento profissional
+          </div>
+        </div>
+
+        <div class="benefit">
+          <div class="check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="benefit-text">
+            <strong>Templates Canva VIP</strong> — modelos extras pra vender suas peças nas redes
+          </div>
+        </div>
+
+        <div class="benefit">
+          <div class="check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="benefit-text">
+            <strong>Acesso vitalício</strong> — baixa hoje, tem pra sempre, sem mensalidade
+          </div>
+        </div>
+
+        <div class="benefit">
+          <div class="check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="benefit-text">
+            <strong>Entrega imediata</strong> — tudo cai no seu Drive junto com a Central Premium
+          </div>
+        </div>
+
+      </div>
+
+      <!-- PRICE -->
+      <div class="price-block">
+        <div class="price-label">Apenas nessa página, por:</div>
+        <div class="price-old">De R$ 97,00</div>
+        <div class="price-now">
+          <span class="currency">R$</span>
+          <span class="amount">37</span>
+          <span class="cents">,00</span>
+        </div>
+        <div class="price-installments">
+          ou <strong>12x de R$ 3,69</strong> no cartão
+        </div>
+        <div class="discount-badge">Economize 62% agora</div>
+      </div>
+
+      <!-- MAIN CTA -->
+      <div class="cta-wrap-anim">
+        <a href="https://pay.cakto.com.br/9tox3x7_889775" class="cta-main">
+          <span>Sim! Quero adicionar agora</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="cta-meta">
+        <span class="cta-meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Pagamento 100% seguro
+        </span>
+        <span class="cta-meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          Acesso imediato
+        </span>
+        <span class="cta-meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          Sem fila no checkout
+        </span>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="stitch"><span class="dash"></span><span class="diamond"></span><span class="dash"></span></div>
+
+  <!-- ============ GUARANTEE ============ -->
+  <div class="guarantee">
+    <div class="guarantee-seal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        <polyline points="9 12 11 14 15 10"/>
+      </svg>
+    </div>
+    <div class="guarantee-text">
+      <h4>Garantia incondicional de 7 dias</h4>
+      <p>Se por qualquer motivo você não amar o material, é só pedir o reembolso em até 7 dias e devolvemos 100% do valor — sem perguntas, sem burocracia.</p>
+    </div>
+  </div>
+
+  <!-- ============ DECLINE LINK (vai pro downsell) ============ -->
+  <div class="decline-wrap">
+    <a href="./downsell.html" class="decline">
+      Não, prefiro continuar perdendo tempo procurando riscos por aí →
+    </a>
+  </div>
+
+</div>
+
+</body>
+</html>
